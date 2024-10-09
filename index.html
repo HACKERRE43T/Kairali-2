@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kairali - Landslide Monitoring Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Kairali</h1>
+        <h2>Landslide Monitoring Tool</h2>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Sensor Controls</h2>
+            <div class="sensor">
+                <label for="rainSensor">Rain Sensor:</label>
+                <input type="range" id="rainSensor" min="0" max="100" value="0" />
+            </div>
+            <div class="sensor">
+                <label for="moistureSensor">Soil Moisture Sensor:</label>
+                <input type="range" id="moistureSensor" min="0" max="100" value="0" />
+            </div>
+            <div class="sensor">
+                <label for="tiltSensor">Tilt Sensor:</label>
+                <input type="range" id="tiltSensor" min="0" max="90" value="0" />
+            </div>
+            <div class="sensor">
+                <label for="vibrationSensor">Vibration Sensor:</label>
+                <input type="range" id="vibrationSensor" min="0" max="10" value="0" />
+            </div>
+            <button id="simulateBtn">Simulate Sensors</button>
+        </aside>
+        <main>
+            <div id="sensor-data">
+                <canvas id="sensorChart"></canvas>
+            </div>
+            <div id="monitoring-area"></div>
+            <div id="location-display">
+                <h2>Your Location</h2>
+                <p id="location">Fetching location...</p>
+            </div>
+            <div id="camera-feed">
+                <h2>Live Camera Feed</h2>
+                <video id="video" autoplay></video>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
